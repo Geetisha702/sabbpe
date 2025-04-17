@@ -17,7 +17,7 @@ public class AgreementAcknowledgementService {
         SimpleMailMessage message = new SimpleMailMessage();
   
         message.setFrom("geetishadevre247@gmail.com");
-        message.setTo("geetishadevre247@gmail.com");
+        message.setTo("alamcta@gmail.com");
         message.setSubject("Agreement Signed Successfully");
         message.setText("Hi,PFA for the agreement esign");
 

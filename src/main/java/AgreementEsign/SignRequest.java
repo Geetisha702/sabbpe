@@ -12,13 +12,20 @@ public class SignRequest {
     private String response_url;
     private String redirect_url;
     private String task_id;
-    private List<SignCoordinate> sign_coordinates;
-	public List<SignCoordinate> getSign_coordinates() {
-		return sign_coordinates;
+    private String white_label;
+public String getWhite_label() {
+		return white_label;
 	}
-	public void setSign_coordinates(List<SignCoordinate> sign_coordinates) {
-		this.sign_coordinates = sign_coordinates;
+	public void setWhite_label(String white_label) {
+		this.white_label = white_label;
 	}
+	//    private List<SignCoordinate> sign_coordinates;
+//	public List<SignCoordinate> getSign_coordinates() {
+//		return sign_coordinates;
+//	}
+//	public void setSign_coordinates(List<SignCoordinate> sign_coordinates) {
+//		this.sign_coordinates = sign_coordinates;
+//	}
 	public Document getDocument() {
 		return document;
 	}

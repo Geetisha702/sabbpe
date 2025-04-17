@@ -29,13 +29,17 @@ public class SignController {
 
     @PostMapping("/agree")
     public ResponseEntity<String> sendEsign(@RequestBody SignRequest signRequest) {
-    	
         return signService.sendSignRequest(signRequest);
     	
     }
     
     @PostMapping("/ping")
-    public ResponseEntity<ResponseUrl> responseURL(@RequestBody ResponseUrl response) {
-        return new ResponseEntity<ResponseUrl>(response,HttpStatus.OK);
+    public ResponseEntity<String> responseURL(@RequestBody ResponseUrl response) {
+        // Convert the object to a string (if that's what you want to return)
+        String responseBody = response.toString();
+
+        // Return a proper ResponseEntity with String body
+        return ResponseEntity.status(HttpStatus.OK).body(responseBody);
     }
+
 }

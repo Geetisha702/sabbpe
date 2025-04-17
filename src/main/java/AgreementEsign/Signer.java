@@ -10,7 +10,7 @@ public class Signer {
     private boolean photo_capture;
     private String signer_city;
     private String signer_purpose;
-    private List<SignCoordinate> sign_coordinates;
+//    private List<SignCoordinate> sign_coordinates;
     public String getSigner_name() {
 		return signer_name;
 	}
@@ -53,12 +53,12 @@ public class Signer {
 	public void setSigner_purpose(String signer_purpose) {
 		this.signer_purpose = signer_purpose;
 	}
-	public List<SignCoordinate> getSign_coordinates() {
-		return sign_coordinates;
-	}
-	public void setSign_coordinates(List<SignCoordinate> sign_coordinates) {
-		this.sign_coordinates = sign_coordinates;
-	}
-	
+//	public List<SignCoordinate> getSign_coordinates() {
+//		return sign_coordinates;
+//	}
+//	public void setSign_coordinates(List<SignCoordinate> sign_coordinates) {
+//		this.sign_coordinates = sign_coordinates;
+//	}
+//	
     // Getters and Setters
 }

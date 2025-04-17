@@ -5,9 +5,11 @@ package com.example.sabbpe.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.sabbpe.DTO.AgreementDTO;
@@ -31,9 +33,15 @@ public class SignService {
 
        HttpEntity<SignRequest> entity = new HttpEntity<>(request, headers);
 
-        return restTemplate.postForEntity(url, entity, String.class);
-    
- 
+       try {
+           // your logic
+           ResponseEntity<String> response = restTemplate.postForEntity(url, entity, String.class);
+           return response; // ✅ return the response
+       } catch (HttpServerErrorException e) {
+           // log and return the error
+           return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                   .body("API call failed: " + e.getResponseBodyAsString());
+       }
 
   }
     }
